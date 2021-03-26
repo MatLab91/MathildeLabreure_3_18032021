@@ -15,11 +15,29 @@ body {
 h1, h2 {
     font-weight: 400 bolder;
 }
+a {
+    text-decoration: none;
+  }
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:focus {
+    text-decoration: none;
+  }
+a:active {
+    text-decoration: none;
+  }
 
 /*Header*/
 header {
     width:100%;
     height: 10vh;
+    box-shadow: 0px 3px 7px #acaaaa;
+    z-index: 1;
+    position: relative;
 
     display: flex;
     justify-content: center;    
@@ -34,7 +52,8 @@ header {
 
 .localisation {
     background-color: $dark-background;
-    border-top: grey;
+    z-index: 0;
+    position: relative;
     width: 100%;
     height: 6vh;
     text-align: center;
@@ -140,13 +159,33 @@ header {
         .restaurant {
             margin-left: 5%;
             margin-right: 5%;
-            border-radius: 10%;
+            border-radius: 6%;
             margin-bottom: 5%;
             height: 15em;
             box-shadow: 2px 4px 9px #b6b4b8;
         }
     }
 }
+/*.parti_menu btn {
+    position: relative;
+    z-index: 1;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: darken(red, 5);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}*/
 .restaurant {
     position: relative;
     overflow: hidden;
@@ -178,6 +217,7 @@ header {
         position: absolute;
         bottom: 0;
         background-color: white;
+        color: black;
         width: 100%;
         height: 30%;
         line-height: 30%;
@@ -187,6 +227,12 @@ header {
             bottom: 35%;
             right: 8%;
             font-size: 1.6em;
+            transition: color 700ms;
+            &:hover, &:focus, &:active {
+                font-weight: bold;
+                color:violet;
+            } /*coder une input type="checkbox" à rendre invisible 
+            devant le coeur et se servir de sa pseudo-classe ":checked"*/
         }
     }
 }
@@ -210,6 +256,10 @@ footer {
         list-style-type: none;
         font-weight: bolder;
         line-height: 175%;
+        color: white;
+        a {
+            color: white;
+        }
         .fas {
             padding-right: 3%;
             font-size: 0.9em;
