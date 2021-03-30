@@ -31,6 +31,45 @@ a:active {
     text-decoration: none;
   }
 
+/*Chargement*/
+.loader__container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /*opacity: .5;*/
+    position: relative;
+}
+.loader__bar::before, 
+.loader__bar::after, 
+.loader__bar span {
+    content:'';
+    display: block;
+    position: absolute;
+    top:0; 
+    width: 10px;
+    height: 30px;
+    animation: grow 1.6s linear infinite;
+}
+.loader__bar::before {
+    left: 0;
+    background-color: $color-secondary;
+}
+.loader__bar::after {
+    left: 15px;
+    background-color: $color-tertiary;
+    animation-delay: -.5s;
+}
+.loader__bar span{
+    left: 30px;
+    background-color: $color-primary;
+    animation-delay: -1s;
+}
+@keyframes grow {
+    0% {transform: scaleY(0); opacity:.4};
+    50% {transform: scale(1); opacity:1};
+    100% {transform: scaleY(0); opacity:.4};
+}
+
 /*Header*/
 header {
     width:100%;
@@ -108,6 +147,10 @@ header {
             margin-bottom:3%;
             border-radius: 25px;
             box-shadow: 2px 4px 9px #b6b4b8;
+            &:hover {
+                opacity:.7;
+                box-shadow: 2px 4px 9px rgb(59, 58, 58);
+            }
         }
     }
 }
@@ -122,8 +165,8 @@ header {
         font-size: 0.9rem;
         top: 33%;
         left: -2%;
-        padding-left: 2.1%;
-        padding-right: 2.4%;
+        padding-left: 2%;
+        padding-right: 2%;
         padding-top: 0.7%;
         padding-bottom: 0.7%;
     }
@@ -159,31 +202,26 @@ header {
         .restaurant {
             margin-left: 5%;
             margin-right: 5%;
-            border-radius: 6%;
+            border-radius: 2rem;
             margin-bottom: 5%;
             height: 15em;
             box-shadow: 2px 4px 9px #b6b4b8;
+            &:hover {
+                opacity:.7;
+                box-shadow: 2px 4px 9px rgb(59, 58, 58);
+            }
         }
     }
 }
-/*.parti_menu btn {
-    position: relative;
-    z-index: 1;
-    &:hover {
-        &::after {
-            opacity: 1;
-        }
-    }
-    &::after {
+
+/*.restaurant {
+    &:before {
+        content:'';
+        display: block;
+        height: 100px;
+        width: 50px;
+        background-color: red;
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: darken(red, 5);
-        opacity: 0;
-        z-index: -1;
-        transition: opacity 250ms;
     }
 }*/
 .restaurant {
@@ -222,7 +260,7 @@ header {
         height: 30%;
         line-height: 30%;
         padding-left: 5%;
-        i {
+        /*i {
             position: absolute;
             bottom: 35%;
             right: 8%;
@@ -232,9 +270,64 @@ header {
                 font-weight: bold;
                 color:violet;
             } /*coder une input type="checkbox" à rendre invisible 
-            devant le coeur et se servir de sa pseudo-classe ":checked"*/
-        }
+            devant le coeur et se servir de sa pseudo-classe ":checked"
+        }*/
     }
+}
+.restaurant {
+    &__btn {
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: transparent 0px solid;
+    padding: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: absolute;
+    bottom: 35%;
+    right: 8%;
+    cursor: pointer;
+    background-color: black;
+    
+    &:hover::before {
+      opacity: 1;
+    }
+    
+    &::before {
+      opacity: 0;
+      transition: 0.5s;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background:linear-gradient(0deg, $color-primary 0%,$color-secondary 100%);
+    }
+  }
+
+  &__like {
+    transition-duration: .25s;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    mix-blend-mode: lighten;
+  }
+
+  &__btn:hover {
+    .menu__like {
+      &--noBg {
+        opacity: 0;
+      }
+    }
+  }
 }
 
 /*Footer*/

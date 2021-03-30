@@ -64,30 +64,72 @@ header .fas {
 .menu {
   z-index: 1;
   background-color: #EDEDED;
-  border-top-left-radius: 35px;
-  border-top-right-radius: 35px;
+  border-radius: 2rem 2rem 0 0;
   width: 100%;
   padding-bottom: 30%;
   position: relative;
   margin-top: -20%;
 }
-.menu h1 {
+.menu .nom_restaurant {
+  padding: 1.3rem 2rem 0 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Shrikhand", "sans-serif";
-  padding-top: 7%;
-  padding-left: 5%;
+}
+
+.menu__btn {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: transparent 0px solid;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   position: relative;
+  background-color: black;
 }
-.menu h1 .far {
-  font-weight: lighter;
+.menu__btn:hover::before {
+  opacity: 1;
+}
+.menu__btn::before {
+  opacity: 0;
+  transition: 0.5s;
+  content: "";
   position: absolute;
-  right: 7%;
-  bottom: 10%;
-  transition: color 1s;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
 }
-.menu h1 .far:hover, .menu h1 .far:active, .menu h1 .far:focus {
-  color: violet;
-  font-weight: bold;
+.menu__like {
+  transition-duration: 0.25s;
+  background-color: #EDEDED;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: lighten;
 }
+.menu__btn:hover .menu__like--noBg {
+  opacity: 0;
+}
+
+/*.nom_restaurant.far{
+    font-weight: lighter;
+    transition: color 1s;
+    &:hover, &:active, &:focus {
+        color: violet;
+        font-weight: bold;
+    }
+}*/
 .menu h2 {
   font-weight: 100;
   font-size: 1em;
