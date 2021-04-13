@@ -2,11 +2,13 @@
 body {
   font-family: "Roboto", "sans-serif";
   font-weight: 200;
-  margin: 0;
   z-index: 2;
+  max-width: 2500px;
+  margin: 0 auto;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 400;
 }
 
@@ -77,18 +79,18 @@ a:active {
 
 .loader__bar::before {
   left: 0;
-  background-color: #FF79DA;
+  background-color: #ff79da;
 }
 
 .loader__bar::after {
   left: 15px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   animation-delay: -0.5s;
 }
 
 .loader__bar span {
   left: 30px;
-  background-color: #9356DC;
+  background-color: #9356dc;
   animation-delay: -1s;
 }
 
@@ -123,7 +125,7 @@ header img {
 
 /*Menu de recherche*/
 .localisation {
-  background-color: #EDEDED;
+  background-color: #ededed;
   z-index: 0;
   position: relative;
   width: 100%;
@@ -137,7 +139,7 @@ header img {
 }
 
 .presentation {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 2.8rem;
@@ -151,7 +153,7 @@ header img {
   font-weight: bolder;
   text-align: center;
   text-shadow: 0.5px 0.3px black;
-  background: linear-gradient(-4deg, #9356DC, #FF79DA);
+  background: linear-gradient(-4deg, #9356dc, #ff79da);
   border-radius: 50px;
   box-shadow: -1px 1px 6px gray;
   padding: 1rem;
@@ -174,7 +176,7 @@ header img {
   margin-bottom: 4rem;
 }
 .fonctionnement .container__fonctionnement .btn__fonctionnement {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   font-weight: bolder;
   width: 90%;
   height: 4rem;
@@ -184,8 +186,11 @@ header img {
   box-shadow: 2px 4px 9px #b6b4b8;
 }
 .fonctionnement .container__fonctionnement .btn__fonctionnement:hover {
-  opacity: 0.7;
+  background-color: rgba(147, 86, 220, 0.3);
   box-shadow: 2px 4px 9px #3b3a3a;
+}
+.fonctionnement .container__fonctionnement .btn__fonctionnement:hover > .fas {
+  color: #9356dc;
 }
 
 .btn__fonctionnement {
@@ -194,7 +199,7 @@ header img {
 .btn__fonctionnement .numero {
   position: absolute;
   border-radius: 50%;
-  background-color: #9356DC;
+  background-color: #9356dc;
   color: white;
   font-size: 0.9rem;
   top: 33%;
@@ -208,11 +213,12 @@ header img {
 .btn__fonctionnement .fas {
   /*icône*/
   position: absolute;
-  color: #A4A4A4;
+  color: #a4a4a4;
   top: 35%;
   left: 12%;
 }
-.btn__fonctionnement .fa-mobile-alt, .btn__fonctionnement .fa-list-ul {
+.btn__fonctionnement .fa-mobile-alt,
+.btn__fonctionnement .fa-list-ul {
   font-size: 1.2rem;
 }
 .btn__fonctionnement .texte {
@@ -223,7 +229,7 @@ header img {
 
 /*Restaurants*/
 .section__restaurant {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   padding-bottom: 2rem;
 }
 .section__restaurant h2 {
@@ -261,7 +267,7 @@ header img {
   object-fit: cover;
 }
 .restaurant .nouveau {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #3b957e;
   font-size: 0.9em;
   font-weight: bolder;
@@ -311,7 +317,7 @@ header img {
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
 }
 .restaurant__like {
   transition-duration: 0.15s;
@@ -360,20 +366,35 @@ footer ul .fas {
 }
 
 @media screen and (min-width: 1023px) {
+  h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
   .fonctionnement .container__fonctionnement {
     flex-direction: row;
     width: 100%;
+    justify-content: center;
   }
   .fonctionnement .container__fonctionnement .btn__fonctionnement {
     margin-right: 1rem;
     margin-left: 1rem;
+    max-width: 25rem;
   }
 
   .section__restaurant .container__restaurant {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 0.5rem;
-    row-gap: 1.5rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    max-width: 1280px;
+    margin: auto;
+    position: relative;
+  }
+}
+@media screen and (min-width: 1600px) {
+  footer {
+    padding-left: 20%;
   }
 }
 

@@ -1,299 +1,312 @@
-
-
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$light-background: #F7F7F7;
-$dark-background: #EDEDED;
-
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+$light-background: #f7f7f7;
+$dark-background: #ededed;
 
 body {
-    font-family: 'Roboto', 'sans-serif';
-    font-weight: 200;
-    margin: 0;
-    z-index:2;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 200;
+  z-index: 2;
+  max-width: 2500px;
+  margin: 0 auto;
 }
-h1, h2 {
-    font-weight: 400;
+h1,
+h2 {
+  font-weight: 400;
 }
 a {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 a:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 a:focus {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 a:active {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 
 /*Chargement*/
 .loader__container {
-    position : fixed;
-    top : 0px;
-    left : 0px;
-    height : 100%;
-    width : 100%;
-    z-index:999;
-    background-color: white;
-    opacity: 1;
-    animation-name: disparition-loader;
-    animation-duration: 2.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
-    pointer-events: none;
-}  
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  opacity: 1;
+  animation-name: disparition-loader;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  pointer-events: none;
+}
 @keyframes disparition-loader {
-    from {
-        opacity:1;
-    }
-    to {
-        opacity:0;
-        z-index: -1;
-    }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
 }
 .loader__bar {
-    position: absolute;
-    top: 45%;
-    left:47.5%;
-    transform:translateX(-50%) translateY(-50%);
-} 
-.loader__bar::before, 
-.loader__bar::after, 
+  position: absolute;
+  top: 45%;
+  left: 47.5%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.loader__bar::before,
+.loader__bar::after,
 .loader__bar span {
-    content:'';
-    display: block;
-    position: absolute;
-    top:0; 
-    width: 10px;
-    height: 30px;
-    animation: grow 1.6s linear infinite;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 30px;
+  animation: grow 1.6s linear infinite;
 }
 .loader__bar::before {
-    left: 0;
-    background-color: $color-secondary;
+  left: 0;
+  background-color: $color-secondary;
 }
 .loader__bar::after {
-    left: 15px;
-    background-color: $color-tertiary;
-    animation-delay: -.5s;
+  left: 15px;
+  background-color: $color-tertiary;
+  animation-delay: -0.5s;
 }
-.loader__bar span{
-    left: 30px;
-    background-color: $color-primary;
-    animation-delay: -1s;
+.loader__bar span {
+  left: 30px;
+  background-color: $color-primary;
+  animation-delay: -1s;
 }
 @keyframes grow {
-    0% {transform: scaleY(0); opacity:.4};
-    50% {transform: scale(1); opacity:1};
-    100% {transform: scaleY(0); opacity:.4};
+  0% {
+    transform: scaleY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0.4;
+  }
 }
 
 /*Header*/
 header {
-    width:100%;
-    height: 5rem;
-    box-shadow: 0px 3px 7px #acaaaa;
-    z-index: 1;
-    position: relative;
+  width: 100%;
+  height: 5rem;
+  box-shadow: 0px 3px 7px #acaaaa;
+  z-index: 1;
+  position: relative;
 
-    display: flex;
-    justify-content: center;    
+  display: flex;
+  justify-content: center;
 
-    img {
-        width: 10rem;
-        height: auto
-    }
+  img {
+    width: 10rem;
+    height: auto;
+  }
 }
 
 /*Menu de recherche*/
 
 .localisation {
-    background-color: $dark-background;
-    z-index: 0;
-    position: relative;
-    width: 100%;
-    height: 2rem;
-    text-align: center;
-    padding-top: 1rem;
-    font-weight: bolder;
-        i {
-            padding-right: 2%
-        }
-} 
+  background-color: $dark-background;
+  z-index: 0;
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  padding-top: 1rem;
+  font-weight: bolder;
+  i {
+    padding-right: 2%;
+  }
+}
 .presentation {
-    background-color: $light-background;
+  background-color: $light-background;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2.8rem;
+  padding-left: 1.4rem;
+  padding-right: 1.5rem;
+  .btn__explorer {
+    display: inline-block;
+    width: auto;
+    color: white;
+    font-weight: bolder;
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 2.8rem;
-    padding-left: 1.4rem;
-    padding-right: 1.5rem;
-        .btn__explorer {
-            display: inline-block;
-            width: auto;
-            color: white;
-            font-weight: bolder;
-            text-align: center;
-            text-shadow: 0.5px 0.3px black;
-            background: linear-gradient(-4deg, $color-primary, $color-secondary);
-            border-radius: 50px;
-            box-shadow: -1px 1px 6px gray;
-            padding: 1rem;
-            margin-top: 1rem;
-        }
+    text-shadow: 0.5px 0.3px black;
+    background: linear-gradient(-4deg, $color-primary, $color-secondary);
+    border-radius: 50px;
+    box-shadow: -1px 1px 6px gray;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
 }
 
 /*Fonctionnement*/
 
 .fonctionnement {
-    padding-top: 1.2rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    .container__fonctionnement {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: auto;
-        width: 100%;
-        margin-bottom: 4rem;
-        .btn__fonctionnement {
-            background-color: $light-background;
-            font-weight: bolder;
-            width: 90%;
-            height: 4rem;
-            margin-top: 0.8rem;
-            margin-bottom: 0.8rem;
-            border-radius: 25px;
-            box-shadow: 2px 4px 9px #b6b4b8;
-            &:hover {
-                opacity:.7;
-                box-shadow: 2px 4px 9px rgb(59, 58, 58);
-            }
-        }
+  padding-top: 1.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  .container__fonctionnement {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-bottom: 4rem;
+    .btn__fonctionnement {
+      background-color: $light-background;
+      font-weight: bolder;
+      width: 90%;
+      height: 4rem;
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+      border-radius: 25px;
+      box-shadow: 2px 4px 9px #b6b4b8;
+      &:hover {
+        background-color:rgba(147, 86, 220, 0.3);
+        box-shadow: 2px 4px 9px rgb(59, 58, 58);
+      }
+      &:hover > .fas{
+        color:$color-primary;
+      }
     }
+  }
 }
 
 .btn__fonctionnement {
-    position: relative;
-    .numero {
-        position: absolute;
-        border-radius: 50%;
-        background-color: $color-primary;
-        color: white;
-        font-size: 0.9rem;
-        top: 33%;
-        left: -2%;
-        height: 1.5rem;
-        width: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .fas { /*icône*/
-        position: absolute;
-        color: #A4A4A4;
-        top: 35%;
-        left: 12%;
-    }
-    .fa-mobile-alt, .fa-list-ul {
+  position: relative;
+  .numero {
+    position: absolute;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: white;
+    font-size: 0.9rem;
+    top: 33%;
+    left: -2%;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fas {
+    /*icône*/
+    position: absolute;
+    color: #a4a4a4;
+    top: 35%;
+    left: 12%;
+  }
+  .fa-mobile-alt,
+  .fa-list-ul {
     font-size: 1.2rem;
-    }
-    .texte {
-        position: absolute;
-        top: 36%;
-        left: 25%;
-    }
+  }
+  .texte {
+    position: absolute;
+    top: 36%;
+    left: 25%;
+  }
 }
 
 /*Restaurants*/
 
 .section__restaurant {
-    background-color: $light-background;
-    padding-bottom: 2rem;
-    h2 {
+  background-color: $light-background;
+  padding-bottom: 2rem;
+  h2 {
     padding-top: 3.5rem;
     padding-left: 1.3rem;
+  }
+  .container__restaurant {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .restaurant {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+      height: 15em;
+      box-shadow: 2px 4px 9px #b6b4b8;
+      &:hover {
+        opacity: 0.7;
+        box-shadow: 2px 4px 9px rgb(59, 58, 58);
+      }
     }
-    .container__restaurant {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        .restaurant {
-            margin-left: 1rem;
-            margin-right: 1rem;
-            border-radius: 2rem;
-            margin-bottom: 1rem;
-            height: 15em;
-            box-shadow: 2px 4px 9px #b6b4b8;
-            &:hover {
-                opacity:.7;
-                box-shadow: 2px 4px 9px rgb(59, 58, 58);
-            }
-        }
-    }
+  }
 }
 
 .restaurant {
-    position: relative;
-    overflow: hidden;
-    img {
-        width: 100%;
-        height: 12rem;
-        border-radius: 1rem 1rem 0 0;
-        position: absolute;
-        box-shadow: none;
-        object-fit: cover;
-    }
-    .nouveau {
-        background-color: $color-tertiary;
-        color: #3b957e;
-        font-size: 0.9em;
-        font-weight: bolder;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        border-radius: 2px;
-    }
-    .texte__restaurant {
-        position: absolute;
-        bottom: 0;
-        background-color: white;
-        color: black;
-        width: 100%;
-        height: 4.5rem;
-        line-height: 0.3rem;
-        padding-left: 1rem;
-    }
+  position: relative;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 12rem;
+    border-radius: 1rem 1rem 0 0;
+    position: absolute;
+    box-shadow: none;
+    object-fit: cover;
+  }
+  .nouveau {
+    background-color: $color-tertiary;
+    color: #3b957e;
+    font-size: 0.9em;
+    font-weight: bolder;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 2px;
+  }
+  .texte__restaurant {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 4.5rem;
+    line-height: 0.3rem;
+    padding-left: 1rem;
+  }
 }
 .restaurant {
-    &__btn {
+  &__btn {
     height: 2rem;
     width: 2rem;
     border: transparent 0px solid;
     padding: 0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 1.4rem;
     right: 2.4rem;
     cursor: pointer;
     background-color: black;
-    
+
     &:hover::before {
       opacity: 1;
     }
-    
+
     &::before {
       opacity: 0;
       transition: 0.2s;
@@ -303,21 +316,25 @@ header {
       left: 0;
       height: 100%;
       width: 100%;
-      background:linear-gradient(0deg, $color-primary 0%,$color-secondary 100%);
+      background: linear-gradient(
+        0deg,
+        $color-primary 0%,
+        $color-secondary 100%
+      );
     }
   }
 
   &__like {
-    transition-duration: .15s;
+    transition-duration: 0.15s;
     background-color: white;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     mix-blend-mode: lighten;
   }
 
@@ -333,50 +350,64 @@ header {
 /*Footer*/
 
 footer {
-    background-color: rgb(53,53,53);
+  background-color: rgb(53, 53, 53);
+  color: white;
+  padding-top: 1.2rem;
+  padding-left: 1.6rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  .logo {
+    font-family: "Shrikhand";
+    letter-spacing: 0.5px;
+    font-size: 1.05em;
+  }
+  ul {
+    padding-left: 0%;
+    list-style-type: none;
+    font-weight: bolder;
+    line-height: 1.5rem;
     color: white;
-    padding-top: 1.2rem;
-    padding-left: 1.6rem;
-    padding-bottom: 3rem;
-    margin-bottom: 0;
-    .logo {
-        font-family: 'Shrikhand';
-        letter-spacing: 0.5px;
-        font-size: 1.05em;
+    a {
+      color: white;
     }
-    ul {
-        padding-left: 0%;
-        list-style-type: none;
-        font-weight: bolder;
-        line-height: 1.5rem;
-        color: white;
-        a {
-            color: white;
-        }
-        .fas {
-            padding-right: 1rem;
-            font-size: 0.9em;
-        }
+    .fas {
+      padding-right: 1rem;
+      font-size: 0.9em;
     }
+  }
 }
 
-@media screen and (min-width:1023px) {
-    .fonctionnement {
-        .container__fonctionnement {
-            flex-direction: row;
-            width: 100%;
-            .btn__fonctionnement {
-                margin-right: 1rem;
-                margin-left: 1rem;
-            }
-        }
+@media screen and (min-width: 1023px) {
+  h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .fonctionnement {
+    .container__fonctionnement {
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      .btn__fonctionnement {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        max-width: 25rem;
+      }
     }
-    .section__restaurant {
-        .container__restaurant {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            column-gap: .5rem;
-            row-gap: 1.5rem;
-        }
+  }
+  .section__restaurant {
+    .container__restaurant {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+      row-gap: 2rem;
+      max-width: 1280px;
+      margin: auto;
+      position: relative;
     }
+  }
+}
+@media screen and (min-width: 1600px) {
+footer {
+padding-left: 20%;
+}
 }
