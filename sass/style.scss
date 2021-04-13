@@ -180,11 +180,11 @@ header {
       border-radius: 25px;
       box-shadow: 2px 4px 9px #b6b4b8;
       &:hover {
-        background-color:rgba(147, 86, 220, 0.3);
+        background-color: rgba(147, 86, 220, 0.3);
         box-shadow: 2px 4px 9px rgb(59, 58, 58);
       }
-      &:hover > .fas{
-        color:$color-primary;
+      &:hover > .fas {
+        color: $color-primary;
       }
     }
   }
@@ -406,8 +406,8 @@ footer {
     }
   }
 }
-@media screen and (min-width: 1600px) {
-footer {
-padding-left: 20%;
-}
+@media screen and (min-width: 2000px) {
+  footer {
+    padding-left: 20%;
+  }
 }
